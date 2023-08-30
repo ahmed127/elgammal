@@ -1,0 +1,8 @@
+{
+    "name": "ahmed127/elgammal",
+    "description": "Laravel Blade and Livewire components for UI scaffolding",
+    "require": {
+        "php": ">=8.1",
+        "ahmed127/elgammal": "1.*"
+    }
+}

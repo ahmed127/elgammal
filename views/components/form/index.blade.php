@@ -1,25 +1,26 @@
 @props(['action' => '', "method" => 'POST', "footer" => ''])
 
 <form action="{{ $action }}" method="POST" class="space-y-6">
-@unless ($method == 'POST')
-@method($method)
-@endunless
+    @unless ($method == 'POST')
+    @method($method)
+    @endunless
 
-@if ($errors->any())
-<x-euikit::alert type="error">Your changes were not submitted due to errors in the form. Please correct the appropriate fields below.</x-euikit::alert>
-@endif
+    @if ($errors->any())
+    <x-elgammal::alert type="error">Your changes were not submitted due to errors in the form. Please correct the
+        appropriate fields below.</x-elgammal::alert>
+    @endif
 
 
-@csrf
+    @csrf
 
-{{ $slot }}
+    {{ $slot }}
 
-@if ($footer)
-<div class="py-3 px-6 border-2 border-slate-300 bg-slate-200 rounded-lg">
-    <div class="flex flex-row items-center justify-between">
-        {{ $footer }}
+    @if ($footer)
+    <div class="py-3 px-6 border-2 border-slate-300 bg-slate-200 rounded-lg">
+        <div class="flex flex-row items-center justify-between">
+            {{ $footer }}
+        </div>
     </div>
-</div>
-@endif
+    @endif
 
-</form><!-- EUIKit Form Component -->
+</form><!-- ELGAMMAL Form Component -->

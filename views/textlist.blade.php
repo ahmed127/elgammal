@@ -1,4 +1,4 @@
-<div><!-- InsideUIKit Textlist component -->
+<div><!-- Insidelgammal Textlist component -->
     @unless($nolabel)
         <label for="{{ $field }}" class="is-small label {{ $errors->has($field) ? 'has-text-danger' : ''}}">
             {{ $label ?: ucfirst($field) }}
@@ -40,4 +40,4 @@
             </div><!-- .control -->
         </div><!-- .field has-addons -->
     @endforeach
-</div><!-- InsideUIKit Textlist component -->
+</div><!-- Insidelgammal Textlist component -->

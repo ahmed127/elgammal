@@ -1,12 +1,12 @@
-<?php namespace eafarris\euikit;
+<?php namespace eafarris\elgammal;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class euikitServiceProvider extends ServiceProvider {
+class elgammalServiceProvider extends ServiceProvider {
 
     public function boot() { // 
-        $this->loadViewsFrom(__DIR__ . '/../views', 'euikit');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'elgammal');
         $this->loadViewsFrom(__DIR__ . '/../views', 'e');
 
         if ($this->app->runningInConsole()) {
@@ -15,21 +15,21 @@ class euikitServiceProvider extends ServiceProvider {
     } // endfunction boot
 
 public function provides() { // 
-    return ['euikit'];
+    return ['elgammal'];
 } // endfunction provides
 
     public function register() { // 
-        $this->mergeConfigFrom(__DIR__ . '/../config/euikit.php', 'euikit');
+        $this->mergeConfigFrom(__DIR__ . '/../config/elgammal.php', 'elgammal');
 
-        $this->app->singleton('euikit', function ($app) {
-            return new euikit;
+        $this->app->singleton('elgammal', function ($app) {
+            return new elgammal;
         });
     } // endfunction register()
 
     public function bootForConsole() { // 
         $this->publishes([
-            __DIR__ . '/../config/euikit.php' => config_path('euikit.php'),
-        ], 'euikit.config');
+            __DIR__ . '/../config/elgammal.php' => config_path('elgammal.php'),
+        ], 'elgammal.config');
     } // endfunction bootForConsole
 
 }

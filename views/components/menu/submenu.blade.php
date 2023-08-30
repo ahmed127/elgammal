@@ -5,4 +5,4 @@
     <div class="ml-6 flex flex-col divide-transparent">
         {{ $slot }}
     </div>
-</div><!-- EUIKit Submenu Component -->
+</div><!-- ELGAMMAL Submenu Component -->

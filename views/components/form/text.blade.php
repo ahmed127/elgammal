@@ -2,21 +2,21 @@
 
 @php
 switch ($field) {
-    case 'pass':
-    case 'password':
-        $autotype = 'password';
-        break;
-    case 'email':
-        $autotype = 'email';
-        break;
-    case 'phone':
-    case 'telephone':
-    case 'tel':
-        $autotype = 'tel';
-        break;
-    default:
-        $autotype = 'text';
-        break;
+case 'pass':
+case 'password':
+$autotype = 'password';
+break;
+case 'email':
+$autotype = 'email';
+break;
+case 'phone':
+case 'telephone':
+case 'tel':
+$autotype = 'tel';
+break;
+default:
+$autotype = 'text';
+break;
 }
 $type = $type ?: $autotype;
 
@@ -26,23 +26,19 @@ $error_classes = 'border-red-500 text-red-900';
 
 <div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
     <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">
-    {{ $label ?: ucfirst($field) }}
+        {{ $label ?: ucfirst($field) }}
     </label>
     <div class="mt-1">
-        <input type="{{ $type }}" 
-            id="{{ $field }}"   
-            name="{{ $field }}"
-            value="{{ @old($field, $value) }}"
+        <input type="{{ $type }}" id="{{ $field }}" name="{{ $field }}" value="{{ @old($field, $value) }}"
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
             class="block w-full rounded-md shadow-sm sm:text-sm {{ $errors->has($field) ? $error_classes : $color_classes }} "
-            @if ($required) required @endif 
-        />
+            @if ($required) required @endif />
         @if ($icon)
-            @svg($icon, ['class' => 'icon is-left', 'style' => 'top: inherit; padding: 5px'])
+        @svg($icon, ['class' => 'icon is-left', 'style' => 'top: inherit; padding: 5px'])
         @endif
     </div>
 
     @error($field)
-        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
     @enderror
-</div><!-- EUIKit text input-->
+</div><!-- ELGAMMAL text input-->
